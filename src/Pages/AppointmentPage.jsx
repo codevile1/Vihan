@@ -46,10 +46,10 @@ Message: ${message || "No message provided"}
     <div className="min-h-screen flex items-center justify-center bg-black p-6 ">
       
       {!submitted ? (
-        <div className="flex flex-col md:flex-row bg-white   overflow-hidden lg:h-[70vh]  max-w-5xl lg:w-fit w-[80vw]  shadow-[0_0_5px_#79519E,0_0_10px_#79519E,0_0_20px_#79519E]">
+        <div className="flex flex-col md:flex-row  text-white   overflow-hidden lg:h-[70vh]  max-w-5xl lg:w-fit w-[80vw]  shadow-[0_0_2px_#79519E,0_0_3px_#79519E,0_0_20px_#79519E]">
           
           {/* Left Image */}
-          <div className="lg:w-1/2  relative group overflow-hidden">
+          <div className="lg:w-1/2 lg:block hidden  relative group overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1557053908-4793c484d06f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D"
               alt="Appointment"
@@ -61,9 +61,9 @@ Message: ${message || "No message provided"}
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="md:w-1/2 p-10  bg-white flex flex-col justify-center"
+            className="md:w-1/2 h-[70vh] lg:p-10 p-6    flex flex-col justify-center backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-lg"
           >
-            <h2 className="text-3xl  mb-8 text-center text-black">
+            <h2 className="lg:text-2xl text-2xl  lg:mb-8 mb-2 text-center text-white">
               Book Appointment
             </h2>
 
@@ -73,7 +73,7 @@ Message: ${message || "No message provided"}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
 
             <input
@@ -82,7 +82,7 @@ Message: ${message || "No message provided"}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
-              className="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
 
             <input
@@ -90,7 +90,7 @@ Message: ${message || "No message provided"}
               placeholder="Email (optional)"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
 
             <textarea
@@ -98,7 +98,7 @@ Message: ${message || "No message provided"}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows="5"
-              className="w-full p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
             ></textarea>
 
             <button

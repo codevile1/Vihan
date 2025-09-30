@@ -50,8 +50,8 @@ const About = () => {
         </h1>
 
        </div>
-        <div className="w-full flex  items-center justify-center flex-wrap mt-8   ">
-          <div className="lg:w-[50%]  lg:p-8 w-full bg-white text-black p-8 overflow-hidden  ">
+        <div className="w-full flex  items-center justify-center flex-wrap mt-8">
+          <div className="lg:w-[50%]  lg:p-8 w-full bg-white/10 backdrop-blur-md  border border-white/20 text-white p-8 overflow-hidden   ">
             <h1 className="lg:text-3xl text-xl lg:mt-10 mt-2 mb-2 lg:mb-4 ">(About)</h1>
             <h1 className="lg:text-3xl text-md ">
               <span className="lg:text-5xl  text-3xl bg-gradient-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent uppercase italic">
@@ -77,7 +77,7 @@ const About = () => {
             </h2>
           </div>
 
-          <div className="bg-white lg:w-[30%] lg:h-[35vw] lg:mt-0 mt-6 overflow-hidden z-10">
+          <div className="bg-white lg:w-[30%] lg:h-[35vw] lg:mt-0 mt-6 overflow-hidden z-10 border-4  ">
             <img
               className="shadow-lg transition duration-300 ease-in-out 
              hover:brightness-75 hover:scale-105 hover:grayscale hover:contrast-125"

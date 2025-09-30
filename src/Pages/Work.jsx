@@ -86,7 +86,7 @@ export default function WorkSection() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-1 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -164,7 +164,7 @@ export default function WorkSection() {
 >
   <span className="relative z-10 transition duration-300 group-hover:text-white flex items-center justify-center gap-2">
     Explore Gallery
-      <MdArrowOutward className=" group-hover:rotate-1" />
+        <MdArrowOutward className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
 
   </span>
 

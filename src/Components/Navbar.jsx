@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { CgMenuRight } from "react-icons/cg";
 import { Link } from "react-router-dom";
+import { MdArrowOutward } from "react-icons/md";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -42,19 +43,19 @@ const Navbar = () => {
         transition={{ duration: 10, repeat: Infinity }}
       />
 
-      <header className="fixed top-0 left-0 w-full z-50 text-white backdrop-blur-md bg-black/10 px-4 pt-1">
+      <header className="fixed top-4 left-0 w-full z-50 text-white px-4 lg:pt-1 flex items-center justify-between ">
+     <h2 className="uppercase font-serif font-bold bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 lg:py-4 py-3"  onClick={() => scrollToSection("hero")}>Vihan pixels</h2>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="container mx-auto px-6 py-4 flex items-center justify-between"
+          className="container  lg:px-12 px-3 py-2 lg:py-4 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl lg:w-fit w-fit gap-20 "
         >
-          <h1 className="text-2xl font-extralight uppercase cursor-pointer" onClick={() => scrollToSection("hero")}>
-            Vihan PixelS
-          </h1>
+          
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-10 text-lg pr-10">
+          <nav className="hidden md:flex gap-10 text-lg ">
             {navLinks.map(({ id, text, sectionId, path }) =>
               sectionId ? (
                 <span
@@ -90,8 +91,8 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden z-50" onClick={() => setMenu(!menu)}>
-            {menu ? <IoMdClose size={30} /> : <CgMenuRight size={30} />}
+          <div className="md:hidden z-50" onClick={() => setMenu(true)}>
+            {!menu && <CgMenuRight size={30} />}
           </div>
         </motion.div>
 
@@ -100,8 +101,18 @@ const Navbar = () => {
           initial={false}
           animate={menu ? "open" : "closed"}
           variants={menuVariants}
-          className="fixed top-0 left-0 w-full overflow-hidden h-screen bg-gradient-to-tr from-[#4B0082] via-[#2C003E] to-black flex items-center justify-center md:hidden z-40"
+          className="fixed top-0 left-0 w-full h-screen bg-gradient-to-tr from-[#4B0082] via-[#2C003E] to-black flex items-center justify-center md:hidden z-50"
         >
+          {/* Close Button inside fullscreen */}
+          {menu && (
+            <button
+              className="absolute top-6 right-6 text-white z-50"
+              onClick={() => setMenu(false)}
+            >
+              <IoMdClose size={32} />
+            </button>
+          )}
+
           {menu && (
             <motion.ul
               initial={{ opacity: 0, y: 30 }}
@@ -134,6 +145,14 @@ const Navbar = () => {
             </motion.ul>
           )}
         </motion.div>
+        <Link to="/appointment" className="mr-2  lg:block  group relative overflow-hidden lg:px-6  px-4 py-2 lg:py-3 lg:text-base text-xs rounded-full font-medium tracking-wide bg-white text-black  cursor-pointer border-gray-300 shadow-lg hover:shadow-lg transition-all border hidden">
+  <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center  gap-2">
+  Book a Session
+        <MdArrowOutward className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+  
+  </span>
+  <span className="absolute inset-0 bg-black transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out "></span>
+</Link>
       </header>
     </>
   );
