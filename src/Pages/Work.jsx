@@ -157,10 +157,10 @@ export default function WorkSection() {
       </section>
   <Link
   to="/gallery"
-  className="relative inline-block lg:px-8 px-4 py-2 font-extralight 
+  className="relative inline-block lg:px-8 px-4 py-2 lg:font-extralight 
              bg-white text-black overflow-hidden group rounded-lg 
-             shadow-[0_4px_20px_rgba(0,255,255,0.4)] lg:mt-4 text-xs lg:text-base 
-             text-center  lg:ml-[44%] ml-[40%]"
+             shadow-[0_4px_20px_rgba(0,255,255,0.4)] lg:mt-4  text-base 
+             text-center  lg:ml-[44%] ml-[31%]"
 >
   <span className="relative z-10 transition duration-300 group-hover:text-white flex items-center justify-center gap-2">
     Explore Gallery
@@ -176,6 +176,7 @@ export default function WorkSection() {
                transition duration-300 ease-in-out rounded-lg"
   />
 </Link>
+
 
     </div>
   );

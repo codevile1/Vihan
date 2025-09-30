@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import MouseFollower from "./Components/Mouse";
 import About from "./Pages/About";
 import Hero from "./Pages/Hero";
 import WorkSection from "./Pages/Work";
 import Navbar from "./Components/Navbar";
-
 import Footer from "./Components/Footer";
 import Gallery from "./Pages/Gallery";
 import ContactPage from "./Pages/Contact";
@@ -12,13 +11,18 @@ import TestimonialCarousel from "./Pages/Testinominal";
 import ScrollToTop from "./Pages/ScrollToTop";
 import AppointmentPage from "./Pages/AppointmentPage";
 
-const App = () => {
+// ✅ A wrapper so we can use useLocation()
+const AppContent = () => {
+  const location = useLocation();
+
   return (
-    <Router>
-            <ScrollToTop />
-      <MouseFollower />
-      {/* Show Navbar only if NOT appointment page */}
+    <>
+      <ScrollToTop />
+      
+
+      {/* Show Navbar only if NOT on appointment page */}
       {location.pathname !== "/appointment" && <Navbar />}
+      {location.pathname !== "/appointment" && <MouseFollower />}
 
       <Routes>
         {/* Home Page */}
@@ -57,7 +61,8 @@ const App = () => {
             </>
           }
         />
-          {/* Appointment Page (NEW) */}
+
+        {/* Appointment Page */}
         <Route
           path="/appointment"
           element={
@@ -68,8 +73,14 @@ const App = () => {
           }
         />
       </Routes>
-    </Router>
+    </>
   );
 };
+
+const App = () => (
+  <Router>
+    <AppContent />
+  </Router>
+);
 
 export default App;

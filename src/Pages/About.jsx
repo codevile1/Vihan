@@ -43,30 +43,26 @@ const About = () => {
         </h1>
       </div>
       <div className=" w-full  lg:mt-20 px-10  ">
-        <h1 className="lg:text-9xl  text-3xl w-full text-center lg:text-left  uppercase lg:ml-10 leading-none tracking-tighter lg:flex items-center justify-start gap-4 ">
-          Through My Lens
+       <div className="w-full  flex items-center justify-center ">
+         <h1 className="lg:text-9xl  text-3xl w-full text-center   uppercase  leading-none tracking-tighter lg:flex items-center justify-start gap-4 ">
+          Behind the Lens
           <CgMailForward className=" inline-block text-purple-800 " />
         </h1>
 
-        <div className="w-full flex  items-center justify-center flex-wrap   ">
-          <div className="lg:w-[60%]  lg:p-8 w-full ">
-            <h1 className="lg:text-3xl text-xl lg:mt-10 mt-2 mb-4 text-center lg:text-left">(About)</h1>
-            <h1 className="lg:text-3xl text-md text-center lg:text-left">
-              Hola, I’m{" "}
+       </div>
+        <div className="w-full flex  items-center justify-center flex-wrap mt-8   ">
+          <div className="lg:w-[50%]  lg:p-8 w-full bg-white text-black p-8 overflow-hidden  ">
+            <h1 className="lg:text-3xl text-xl lg:mt-10 mt-2 mb-2 lg:mb-4 ">(About)</h1>
+            <h1 className="lg:text-3xl text-md ">
               <span className="lg:text-5xl  text-3xl bg-gradient-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent uppercase italic">
-                VIhan
+                Hola, I’m VIhan <br />
               </span>
-              , a passionate photographer based in{" "}
-              <span className=" bg-gradient-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent underline">
-                Kanpur
-              </span>
-              . I love capturing real emotions, beautiful moments, and turning
-              them into timeless memories. Photography for me is not just work,
-              it’s a way of telling stories through my lens.
+              a passionate photographer based in Kanpur . I love capturing
+              emotions and turning moments into timeless stories.
             </h1>
 
-            <h1 className="lg:text-3xl text-xl mt-10 text-center lg:text-left">(What I Capture)</h1>
-            <h2 className="lg:text-2xl text-md  mt-4 text-center lg:text-left">
+            <h1 className="lg:text-3xl text-xl mt-10 ">(What I Capture)</h1>
+            <h2 className="lg:text-2xl text-md  mt-4 ">
               I specialize in different styles of photography including{" "}
               <span className="underline italic lg:text-3xl uppercase bg-gradient-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent  ">
                 {" "}
@@ -75,12 +71,10 @@ const About = () => {
               and{" "}
               <span className="underline italic lg:text-3xl uppercase bg-gradient-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent  ">
                 {" "}
-                events{" "}
+                events.{" "}
               </span>{" "}
-              coverage. No matter the occasion, my goal is to deliver pictures
-              that feel natural, beautiful, and unforgettable.
+              My goal photos that feel natural, beautiful, and unforgettable.
             </h2>
-            
           </div>
 
           <div className="bg-white lg:w-[30%] lg:h-[35vw] lg:mt-0 mt-6 overflow-hidden z-10">

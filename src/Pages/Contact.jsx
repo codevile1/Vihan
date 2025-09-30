@@ -2,7 +2,7 @@ import { FaInstagram, FaFacebook, FaEnvelope, FaPhoneAlt } from "react-icons/fa"
 
 export default function ContactPage() {
   return (
-    <div className="relative">
+    <div className="relative w-full  overflow-hidden">
           <div
         className="absolute  top-[-10%] left-[40%] w-[300px] h-[300px] bg-purple-800 rounded-full blur-3xl opacity-50 z-10 pointer-events-none"
         animate={{

@@ -71,8 +71,7 @@ const TestimonialCarousel = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center 
-bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 backdrop-blur-lg border border-white/20
+              <div className="flex flex-col items-center border border-gray-700 bg-black/100
                               p-8 rounded-lg shadow-lg">
                 <img
                   src={testimonial.img}
