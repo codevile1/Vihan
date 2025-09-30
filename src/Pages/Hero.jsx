@@ -39,19 +39,19 @@ const Hero = () => {
         }}
         transition={{ duration: 10, repeat: Infinity }}
       />
-<div className="w-1/2  flex items-end justify-start  ">
+{/* <div className="w-1/2  flex items-end justify-start  ">
   <img className="lg:w-[14vw] absolute w-[34vw] lg:z-0 z-40" loading="lazy" src="https://images.unsplash.com/photo-1698717797707-507b5fd279e6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-</div>
-<div className=" absolute z-30 lg:top-30 bottom-[25%] right-50 lg:left-[15%] lg:bg-white   lg:text-black text-white lg:h-[28vw] h-[40vh] w-[40vw] lg:w-[40vw] lg:flex items-center justify-center flex-col shadow-md">
+</div> */}
+{/* <div className=" absolute z-30 lg:top-30 bottom-[25%] right-50 lg:left-[15%] lg:bg-white   lg:text-black text-white lg:h-[28vw] h-[40vh] w-[40vw] lg:w-[40vw] lg:flex items-center justify-center flex-col shadow-md">
   <h1 className="lg:text-2xl text-sm font-extralight  uppercase ">Vihan pixels</h1>
 
   <h1 className="lg:text-7xl text-4xl  ">PHOTOGRAPHY STUDIO</h1>
 
 
 
-</div>
-<div className="lg:w-1/2   relative   flex items-center justify-end overflow-hidden lg:z-0 z-20">
-  <img className="w-full h-fit" loading="lazy" src="https://images.unsplash.com/photo-1730956613466-031ad4342bd2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+</div> */}
+<div className="flex w-full h-screen items-center justify-center overflow-hidden relative">
+  <img className="object-cover object-[25%_30%] w-full h-full" loading="lazy" src="https://images.unsplash.com/photo-1730956613466-031ad4342bd2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
 </div>
 
 

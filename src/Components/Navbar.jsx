@@ -11,7 +11,6 @@ const Navbar = () => {
   const navLinks = [
     { id: 1, text: "About", sectionId: "about" },
     { id: 2, text: "Work", sectionId: "work" },
-    // { id: 3, text: "Gallery", path: "/gallery" },
     { id: 4, text: "Contact", sectionId: "contact" },
   ];
 
@@ -44,7 +43,7 @@ const Navbar = () => {
       />
 
       <header className="fixed top-4 left-0 w-full z-50 text-white px-4 lg:pt-1 flex items-center justify-between ">
-     <h2 className="uppercase font-serif font-bold bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 lg:py-4 py-3"  onClick={() => scrollToSection("hero")}>Vihan pixels</h2>
+     <h2 className="uppercase font-serif font-bold bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 lg:py-4 py-3"  onClick={() => scrollToSection("hero")}  >Vihan pixels</h2>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -147,7 +146,7 @@ const Navbar = () => {
         </motion.div>
         <Link to="/appointment" className="mr-2  lg:block  group relative overflow-hidden lg:px-6  px-4 py-2 lg:py-3 lg:text-base text-xs rounded-full font-medium tracking-wide bg-white text-black  cursor-pointer border-gray-300 shadow-lg hover:shadow-lg transition-all border hidden">
   <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center  gap-2">
-  Book a Session
+  View Gallery
         <MdArrowOutward className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
   
   </span>

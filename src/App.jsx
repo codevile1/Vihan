@@ -10,6 +10,7 @@ import ContactPage from "./Pages/Contact";
 import TestimonialCarousel from "./Pages/Testinominal";
 import ScrollToTop from "./Pages/ScrollToTop";
 import AppointmentPage from "./Pages/AppointmentPage";
+import Hero1 from "./Pages/Hero1";
 
 // ✅ A wrapper so we can use useLocation()
 const AppContent = () => {
@@ -30,6 +31,8 @@ const AppContent = () => {
           path="/"
           element={
             <>
+            
+            <div id="hero"><Hero1 /></div>
               <div id="hero"><Hero /></div>
               <div id="about"><About /></div>
               <div id="work"><WorkSection /></div>
