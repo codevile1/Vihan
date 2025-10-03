@@ -46,7 +46,7 @@ Message: ${message || "No message provided"}
     <div className="min-h-screen flex items-center justify-center bg-black p-6 ">
       
       {!submitted ? (
-        <div className="flex flex-col md:flex-row  text-white   overflow-hidden lg:h-[70vh]  max-w-5xl lg:w-fit w-[80vw]  shadow-[0_0_2px_#79519E,0_0_3px_#79519E,0_0_20px_#79519E]">
+        <div className="flex flex-col md:flex-row  text-white rounded-2xl  overflow-hidden lg:h-[70vh]  max-w-5xl lg:w-fit w-[80vw]  lg:shadow-[0_0_2px_#B9FD50,0_0_3px_#B9FD50,0_0_10px_#B9FD50] shadow-[0_0_1px_#B9FD50,0_0_1px_#B9FD50,0_0_2px_#B9FD50]">
           
           {/* Left Image */}
           <div className="lg:w-1/2 lg:block hidden  relative group overflow-hidden">
@@ -61,7 +61,7 @@ Message: ${message || "No message provided"}
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="md:w-1/2 h-[70vh] lg:p-10 p-6    flex flex-col justify-center backdrop-blur-md bg-white/5 border border-white/10 rounded-xl shadow-lg"
+            className="md:w-1/2 h-[70vh] lg:p-10 p-6    flex flex-col justify-center backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-lg"
           >
             <h2 className="lg:text-2xl text-2xl  lg:mb-8 mb-2 text-center text-white">
               Book Appointment
@@ -73,7 +73,7 @@ Message: ${message || "No message provided"}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-white/10 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#B9FD50]"
             />
 
             <input
@@ -82,7 +82,7 @@ Message: ${message || "No message provided"}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
-              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-white/10 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#B9FD50]"
             />
 
             <input
@@ -90,7 +90,7 @@ Message: ${message || "No message provided"}
               placeholder="Email (optional)"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-white/10 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#B9FD50]"
             />
 
             <textarea
@@ -98,12 +98,12 @@ Message: ${message || "No message provided"}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows="5"
-              className="w-full p-2 lg:p-3 mb-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-purple-500"
+              className="w-full p-2 lg:p-3 mb-3 border border-white/10 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#B9FD50]"
             ></textarea>
 
             <button
               type="submit"
-              className="w-full bg-purple-800 text-white p-3 cursor-pointer rounded-lg font-semibold text-md hover:bg-purple-950 transition-all duration-300 shadow-2xl"
+              className="w-full bg-[#B9FD50] text-black p-3 cursor-pointer rounded-lg  text-md hover:contrast-125 transition-all duration-300 shadow-2xl"
             >
               Submit
             </button>

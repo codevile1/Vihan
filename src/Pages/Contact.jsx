@@ -59,21 +59,21 @@ export default function ContactPage() {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-dashed border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-dashed border-gray-700 text-white focus:outline-none focus:ring-1 focus:ring-[#B9FD50] focus:border-transparent"
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-dashed border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-dashed border-gray-700 text-white focus:outline-none focus:ring-1 focus:border-transparent focus:ring-[#B9FD50]"
             />
             <textarea
               placeholder="Your Message"
               rows="5"
-              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-dashed border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-3 rounded-lg bg-black border-2 border-dashed border-gray-700 text-white focus:outline-none focus:ring-1 focus:ring-[#B9FD50] focus:border-transparent"
             ></textarea>
             <button
               type="submit"
-              className="w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-purple-600 to-orange-500 hover:opacity-90 transition"
+              className="w-full py-3 rounded-lg  bg-[#B9FD50] text-black hover:opacity-90 transition"
             >
               Send Message
             </button>

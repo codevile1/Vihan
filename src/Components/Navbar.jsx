@@ -43,13 +43,13 @@ const Navbar = () => {
       />
 
       <header className="fixed top-4 left-0 w-full z-50 text-white px-4 lg:pt-1 flex items-center justify-between ">
-     <h2 className="uppercase font-serif font-bold bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 lg:py-4 py-3"  onClick={() => scrollToSection("hero")}  >Vihan pixels</h2>
+     <h2 className="uppercase font-serif font-extrabold bg-  px-6 lg:py-4 py-3"  onClick={() => scrollToSection("hero")}  >Vihan pixels</h2>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="container  lg:px-12 px-3 py-2 lg:py-4 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl lg:w-fit w-fit gap-20 "
+          className="container  lg:px-12 px-3 py-2 lg:py-3 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl lg:w-fit w-fit gap-20 "
         >
           
 
@@ -144,13 +144,13 @@ const Navbar = () => {
             </motion.ul>
           )}
         </motion.div>
-        <Link to="/appointment" className="mr-2  lg:block  group relative overflow-hidden lg:px-6  px-4 py-2 lg:py-3 lg:text-base text-xs rounded-full font-medium tracking-wide bg-white text-black  cursor-pointer border-gray-300 shadow-lg hover:shadow-lg transition-all border hidden">
-  <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center justify-center  gap-2">
+        <Link to="/appointment" className="mr-2  lg:block  group relative overflow-hidden lg:px-6  px-4 py-2 lg:py-3 lg:text-base text-xs rounded-full font-medium tracking-wide bg-white text-black  cursor-pointer border-gray-300 shadow-lg hover:shadow-lg transition-all hidden">
+  <span className="relative z-10  transition-colors duration-300 flex items-center justify-center  gap-2">
   View Gallery
         <MdArrowOutward className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
   
   </span>
-  <span className="absolute inset-0 bg-black transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out "></span>
+  <span className="absolute inset-0 bg-[#B9FD50] transform -translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out "></span>
 </Link>
       </header>
     </>

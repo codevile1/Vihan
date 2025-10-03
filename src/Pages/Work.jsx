@@ -157,12 +157,12 @@ export default function WorkSection() {
       </section>
   <Link
   to="/gallery"
-  className="relative inline-block lg:px-8 px-4 py-2 lg:font-extralight 
-             bg-white text-black overflow-hidden group rounded-lg 
+  className="relative inline-block lg:px-8 px-4 py-3 lg:font-extralight 
+             bg-white text-black overflow-hidden group rounded-full 
              shadow-[0_4px_20px_rgba(0,255,255,0.4)] lg:mt-4  text-base 
-             text-center  lg:ml-[44%] ml-[31%]"
+             text-center  lg:ml-[44%] ml-[31%] z-50"
 >
-  <span className="relative z-10 transition duration-300 group-hover:text-white flex items-center justify-center gap-2">
+  <span className="relative z-10 transition duration-300  flex items-center justify-center gap-2">
     Explore Gallery
         <MdArrowOutward className="transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
 
@@ -171,7 +171,7 @@ export default function WorkSection() {
 
   {/* Hover overlay with smooth gradient */}
   <span
-    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 
+    className="absolute inset-0 bg-[#B9FD50] 
                translate-y-[-100%] group-hover:translate-y-0 
                transition duration-300 ease-in-out rounded-lg"
   />

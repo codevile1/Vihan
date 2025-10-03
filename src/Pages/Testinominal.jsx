@@ -43,7 +43,7 @@ const TestimonialCarousel = () => {
     <section className="bg-black text-gray-300 py-16 ">
       <div className="max-w-6xl mx-auto px-6 relative ">
         <h2 className="lg:text-3xl text-xl text-white text-center mb-12">
-          What Clients Say, Stories of Light
+          What Clients Say
         </h2>
         <div className="custom-prev lg:text-4xl mt-10  text-white absolute left-0 lg:-left-20 top-1/2 -translate-y-1/2 z-10">
   &#10094;
