@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { MdArrowOutward } from "react-icons/md";
-import { RiArrowDropLeftLine } from "react-icons/ri";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
 import { Link } from "react-router-dom";
 
@@ -33,7 +32,7 @@ export default function Carousel() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden  bg-black ">
-      <div className="absolute z-10 text-white top-1/2  transform -translate-y-1/2  w-full lg:p-10 p-4 flex items-center justify-center flex-col">
+      <div className="absolute  text-white top-1/2 z-40  transform -translate-y-1/2  w-full lg:p-10 p-4 flex items-center justify-center flex-col">
         <h1
           style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}
           className="lg:text-8xl lg:leading-[5vw] leading-[13vw] text-center lg:font-normal font-extralight text-6xl lg:max-w-5xl  leading-tighter tracking-tighter  "
@@ -73,16 +72,16 @@ export default function Carousel() {
       ))}
 
       {/* Controls */}
-      <div className="absolute bottom-[50%] left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full  z-20 lg:px-10 px-4">
+      <div className="absolute  bottom-[50%] left-1/2 transform -translate-x-1/2 flex items-center justify-between w-full  z-50 lg:px-10 px-4">
         <button
           onClick={goToPrev}
-          className="bg-white/10 backdrop-blur-md border text-white border-white/20 bg-opacity-30 p-3 flex items-center justify-center rounded-full hover:bg-opacity-50 transition-all"
+          className="bg-white/10  backdrop-blur-md border text-white border-white/20 bg-opacity-30 p-3 flex items-center justify-center rounded-full hover:bg-opacity-50 transition-all"
         >
           <VscChevronLeft />
         </button>
         <button
           onClick={goToNext}
-          className="bg-white/10 backdrop-blur-md border text-white border-white/20 bg-opacity-30 p-3 flex items-center justify-center rounded-full hover:bg-opacity-50 transition"
+          className="bg-white/10  backdrop-blur-md border text-white border-white/20 bg-opacity-30 p-3 flex items-center justify-center rounded-full hover:bg-opacity-50 transition"
         >
           <VscChevronRight />
         </button>

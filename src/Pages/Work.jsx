@@ -91,10 +91,10 @@ export default function WorkSection() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-8 py-1 rounded-full  transition-all duration-150  
+              className={`px-8 py-1 rounded-full  transition-all duration-150 z-50 
               ${
                 selectedCategory === cat
-                  ? "bg-gradient-to-r from-purple-600 to-orange-500 text-white border-transparent shadow-xl"
+                  ? "bg-[#B9FD50] text-black shadow-xl"
                   : "bg-transparent text-gray-400 border-gray-600  hover:bg-gray-800"
               }`}
             >

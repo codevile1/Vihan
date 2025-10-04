@@ -52,9 +52,9 @@ const Hero = () => {
 </div> */}
 <div className="flex w-full items-center justify-center overflow-hidden relative">
   <div className="absolute  lg:top-52 left-5  lg:left-50">
-      <h1 className=" z-10 text-start text-gray-300 left-20 text-[14vw] font-extralight leading-[12vw] italic">Vihan <br /> Pixels</h1>
+      <h1  className="hero z-10 text-start text-gray-300 left-20 text-[14vw] font-extralight leading-[12vw] italic">Vihan <br /> Pixels</h1>
 
-    <p className="text-gray-300 z-10  lg:max-w-2xl text-start">Lora debitis beatae, soluta praesentium tempore voluptatibus consequatur repudiandae vero non laudantium quaerat sapiente dolore suscipit vitae itaque. Neque suscipit alias praesentium quisquam explicabo eaque dignissimos debitis dolores quos consequatur.</p>
+    <p className="text-gray-300 z-10  lg:max-w-2xl max-w-3xs text-xs lg:text-xl text-start">Lora debitis beatae, soluta praesentium tempore voluptatibus consequatur repudiandae vero non laudantium quaerat sapiente dolore suscipit vitae itaque. Neque suscipit alias praesentium quisquam explicabo eaque dignissimos debitis dolores quos consequatur.</p>
 
   </div>
 

@@ -43,36 +43,34 @@ const About = () => {
         </h1>
       </div>
       <div className=" w-full  lg:mt-20 px-10  ">
-       <div className="w-full  flex items-center justify-center ">
-         <h1 className="lg:text-4xl  text-xs w-full text-center lg:ml-[9.5%]   uppercase  leading-none tracking-tighter lg:flex flex items-center lg:justify-start justify-center lg:gap-4 gap-2 ">
-          Behind the Lens
-          <CgMailForward className=" inline-block text-purple-800 " />
-        </h1>
-
-       </div>
+        <div className="w-full  flex items-center justify-center ">
+          <h1 className="lg:text-4xl  text-xs w-full text-center lg:ml-[9.5%]   uppercase  leading-none tracking-tighter lg:flex flex items-center lg:justify-start justify-center lg:gap-4 gap-2 ">
+            Behind the Lens
+            <CgMailForward className=" inline-block text-purple-800 " />
+          </h1>
+        </div>
         <div className="w-full flex gap-4 items-top justify-center flex-wrap mt-8 ">
           <div className="lg:w-[50%] h-1/2 lg:p-8 w-full bg-white/10 backdrop-blur-md  border border-white/20 text-white p-8 overflow-hidden   ">
-            <h1 className="lg:text-xl text-xs lg:mt-10 mt-2 mb-2 lg:mb-4 text-gray-300 ">About</h1>
-            <h1 className="lg:text-3xl text-md font-extralight ">
-               Hola, I’m 
+            <h1 className="lg:text-xl text-xs lg:mt-10 mt-2 mb-2 lg:mb-4 text-gray-300 ">
+              About
+            </h1>
+            <h1 className="lg:text-2xl text-md  mt-4  ">
+              Hola, I’m
               <span className="lg:text-4xl  text-2xl  uppercase">
-                 {" "}VIhan <br /> 
-              </span>
-              {" "}a passionate photographer based in Kanpur. I love capturing
+                {" "}
+                VIhan <br />
+              </span>{" "}
+              a passionate photographer based in Kanpur. I love capturing
               emotions and turning moments into timeless stories.
             </h1>
 
-            <h1 className=" text-gray-300 mt-10 lg:text-xl text-xs ">What I Capture</h1>
+            <h1 className=" text-gray-300 mt-10 lg:text-xl text-xs ">
+              What I Capture
+            </h1>
             <h2 className="lg:text-2xl text-md  mt-4 ">
-              I specialize in different styles of photography including{" "}
-                {" "}
-                portraits, weddings, pre-weddings, birthdays,{" "}
-              
-              and{" "}
-                {" "}
-                events.{" "}
-              
-              My goal photos that feel natural, beautiful, and unforgettable.
+              I specialize in different styles of photography including
+              portraits, weddings, pre-weddings, birthdays, and events. My goal
+              photos that feel natural, beautiful, and unforgettable.
             </h2>
           </div>
 

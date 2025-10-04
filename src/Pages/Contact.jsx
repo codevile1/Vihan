@@ -53,7 +53,7 @@ export default function ContactPage() {
         </div>
 
         {/* Right Section (Form) */}
-        <div className=" border-2 border-dashed p-8 rounded-2xl shadow-lg z-20 border-white/40">
+        <div className=" border-2 border-dashed p-8 rounded-2xl shadow-lg  border-white/40 z-50">
           <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
           <form className="space-y-5">
             <input

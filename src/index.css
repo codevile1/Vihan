@@ -12,4 +12,6 @@ body {
 
 
 /* Add this in your global.css or Tailwind CSS file */
-
+.hero{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}

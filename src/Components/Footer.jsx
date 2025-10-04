@@ -1,5 +1,3 @@
-import React from "react";
-import { BsCodeSlash } from "react-icons/bs";
 import { GoArrowUpRight } from "react-icons/go";
 
 const Footer = () => {
@@ -13,7 +11,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Vihan PixelS. All Rights Reserved.
           </p>
           <p className="text-sm mt-1">
-            Designed & Developed by <span className="font-semibold">Satyam Chaurasiya</span> ❤️
+            Designed & Developed by <span className="font-semibold">Satyam Chaurasiya</span> 
           </p>
         </div>
 
@@ -27,7 +25,7 @@ const Footer = () => {
           >
             
 
-            <span className="text-sm">Contact Me</span>
+            <span className="text-sm z-50">Contact Me</span>
             <GoArrowUpRight />
 
           </a>
