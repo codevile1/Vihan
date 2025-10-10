@@ -39,12 +39,12 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   return (
-    <section className="bg-black text-gray-300 py-16 h-screen p-20  flex items-center justify-center overflow-hidden ">
-      <div className="max-w-6xl mx-auto px-6 relative ">
+    <section className="bg-black text-gray-300 py-16 h-screen p-10  flex items-center justify-center overflow-hidden ">
+      <div className="max-w-6xl mx-auto px-6 relative  ">
         <h2 className="lg:text-3xl text-xl text-white text-center mb-12">
           What Clients Say
         </h2>
-        <div className="custom-prev cursor-pointer lg:text-4xl mt-10  text-white absolute left-0 lg:-left-20 top-1/2 -translate-y-1/2 z-10">
+        <div className="custom-prev cursor-pointer lg:text-4xl mt-10   text-white absolute left-0 lg:-left-20 top-1/2 -translate-y-1/2 z-10">
   &#10094;
 </div>
 <div className="custom-next text-white  cursor-pointer   lg:text-4xl mt-10 absolute lg:-right-20 right-0 top-1/2 -translate-y-1/2 z-10">
@@ -70,7 +70,7 @@ const TestimonialCarousel = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center bg-white/5 backdrop-blur-md border border-white/10
+              <div className="flex flex-col items-center  bg-white/5 backdrop-blur-md border border-white/10
                               p-8 rounded-lg shadow-lg">
                 <img
                   src={testimonial.img}

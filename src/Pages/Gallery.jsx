@@ -44,8 +44,8 @@ export default function Gallery() {
   const closeModal = () => setModalImage(null);
 
   return (
-    <div className="min-h-screen bg-black">
-      <h1 className="text-4xl text-center text-white my-6">
+    <div className="min-h-screen w-full bg-black">
+      <h1 className="lg:text-4xl text-center text-white lg:pt-24 pt-20 lg:pb-4 pb-2">
         Stories in Pixels
       </h1>
 
@@ -58,7 +58,7 @@ export default function Gallery() {
               setSelectedCategory(cat);
               setSelectedSubCategory(null);
             }}
-            className={`px-6 py-2 rounded-full text-sm transition-all duration-150 ${
+            className={`lg:px-6 px-3 lg:py-2 py-1 rounded-full lg:text-smt text-xs  transition-all duration-150 ${
               selectedCategory === cat
                 ? "bg-[#B9FD50] text-black shadow-lg"
                 : "bg-transparent text-gray-400 border border-gray-600 hover:bg-gray-800"
@@ -76,7 +76,7 @@ export default function Gallery() {
             <button
               key={subCat}
               onClick={() => setSelectedSubCategory(subCat)}
-              className={`px-4 py-1 rounded-full text-sm transition-all duration-150 ${
+              className={`lg:px-4 px-2  lg:py-1 rounded-full lg:text-sm text-xs transition-all duration-150 ${
                 selectedSubCategory === subCat
                   ? "bg-[#B9FD50] text-black shadow-lg"
                   : "bg-transparent text-gray-400 border border-gray-600 hover:bg-gray-800"
@@ -89,14 +89,14 @@ export default function Gallery() {
       )}
 
       {/* Masonry Gallery */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-2 p-2">
+      <div className=" columns-2 lg:columns-3 gap-2 lg:p-4 p-2">
         {filteredImages.map((img, index) => {
-          const height = index % 3 === 1 ? 600 : 500;
+          // const height = index % 3 === 1 ? 600 : 500;
           return (
             <div
               key={img.id}
-              className="mb-2 overflow-hidden cursor-pointer group break-inside"
-              style={{ height: `${height}px` }}
+  className="mb-2 overflow-hidden cursor-pointer group break-inside h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
+              // style={{ height: `${height}px` }}
               onClick={() => openModal(img.src)}
             >
               <img
@@ -119,7 +119,7 @@ export default function Gallery() {
           <img
             src={modalImage}
             alt="modal"
-            className="max-h-[90vh] max-w-[90vw] object-contain"
+            className="max-h-[90vh] max-w-[90vw] object-contain object-center"
           />
         </div>
       )}
