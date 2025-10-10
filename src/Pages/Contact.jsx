@@ -1,8 +1,9 @@
 import { FaInstagram, FaFacebook, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import Footer from "../Components/Footer";
 
 export default function ContactPage() {
   return (
-    <div className="relative w-full  overflow-hidden">
+    <div className="relative h-screen bg-black w-full  overflow-x-hidden">
           <div
         className="absolute  top-[-10%] left-[40%] w-[300px] h-[300px] bg-purple-800 rounded-full blur-3xl opacity-50 z-10 pointer-events-none"
         animate={{
@@ -22,9 +23,9 @@ export default function ContactPage() {
         transition={{ duration: 10, repeat: Infinity }}
       />
       
-    <section id="contact" className="bg-black text-white py-20 px-6">
+    <section id="contact" className="bg-black text-white py-4 px-6">
       
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mt-20  mx-auto grid md:grid-cols-2 gap-12 items-center">
         
         {/* Left Section */}
         <div>
@@ -53,7 +54,7 @@ export default function ContactPage() {
         </div>
 
         {/* Right Section (Form) */}
-        <div className=" border-2 border-dashed p-8 rounded-2xl shadow-lg  border-white/40 z-50">
+        <div className=" border-2 border-dashed p-8 rounded-2xl shadow-lg  border-white/40 ">
           <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
           <form className="space-y-5">
             <input
@@ -80,7 +81,9 @@ export default function ContactPage() {
           </form>
         </div>
       </div>
+        <Footer/>
     </section>
+  
    
 </div>
 

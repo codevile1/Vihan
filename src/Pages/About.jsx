@@ -1,5 +1,6 @@
 import React from "react";
 import { CgMailForward } from "react-icons/cg";
+import Footer from "../Components/Footer";
 
 const About = () => {
   return (
@@ -50,7 +51,7 @@ const About = () => {
           </h1>
         </div>
         <div className="w-full flex gap-4 items-top justify-center flex-wrap mt-8 ">
-          <div className="lg:w-[50%] h-1/2 lg:p-8 w-full bg-white/10 backdrop-blur-md  border border-white/20 text-white p-8 overflow-hidden   ">
+          <div className="lg:w-[50%] h-1/2 lg:p-8 w-full bg-white/10 backdrop-blur-md  rounded-bl-4xl rounded-tr-4xl border border-white/20 text-white p-8 overflow-hidden   ">
             <h1 className="lg:text-xl text-xs lg:mt-10 mt-2 mb-2 lg:mb-4 text-gray-300 ">
               About
             </h1>
@@ -83,8 +84,11 @@ const About = () => {
               loading="lazy"
             />
           </div>
+      
         </div>
+        
       </div>
+    
     </div>
   );
 };

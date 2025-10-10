@@ -1,89 +1,27 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import MouseFollower from "./Components/Mouse";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar"
+import Contact from "./Pages/Contact"
 import About from "./Pages/About";
-import Hero from "./Pages/Hero";
-import WorkSection from "./Pages/Work";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 import Gallery from "./Pages/Gallery";
-import ContactPage from "./Pages/Contact";
-import TestimonialCarousel from "./Pages/Testinominal";
-import ScrollToTop from "./Pages/ScrollToTop";
+// import Appointment from "./Pages/AppointmentPage"
 import AppointmentPage from "./Pages/AppointmentPage";
-import Hero1 from "./Pages/Hero1";
+// import Footer from "./Components/Footer";
+import TestimonialCarousel from "./Pages/Testinominal";
 
-// ✅ A wrapper so we can use useLocation()
-const AppContent = () => {
-  const location = useLocation();
-
+function App() {
   return (
-    <>
-      <ScrollToTop />
-      
-
-      {/* Show Navbar only if NOT on appointment page */}
-      {location.pathname !== "/appointment" && <Navbar />}
-      {location.pathname !== "/appointment" && <MouseFollower />}
-
+    <Router>
+      <Navbar />
       <Routes>
-        {/* Home Page */}
-        <Route
-          path="/"
-          element={
-            <>
-            
-            <div id="hero"><Hero1 /></div>
-              <div id="hero"><Hero /></div>
-              <div id="about"><About /></div>
-              <div id="work"><WorkSection /></div>
-              <div id="testimonial"><TestimonialCarousel /></div>
-              <div id="contact"><ContactPage /></div>
-              <Footer />
-            </>
-          }
-        />
-
-        {/* Contact Page */}
-        <Route
-          path="/contact"
-          element={
-            <>
-              <ContactPage />
-              <Footer />
-            </>
-          }
-        />
-
-        {/* Gallery Page */}
-        <Route
-          path="/gallery"
-          element={
-            <>
-              <Gallery />
-              <Footer />
-            </>
-          }
-        />
-
-        {/* Appointment Page */}
-        <Route
-          path="/appointment"
-          element={
-            <>
-              <AppointmentPage />
-              <Footer />
-            </>
-          }
-        />
+        <Route path="/" element={<Gallery/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/testimonial" element={<TestimonialCarousel/>}/>
+        <Route path="/contact" element={<Contact/>} />
+         <Route path="/appointment" element={<AppointmentPage/>} />
       </Routes>
-    </>
+      {/* <Footer/> */}
+    </Router>
   );
-};
-
-const App = () => (
-  <Router>
-    <AppContent />
-  </Router>
-);
+}
 
 export default App;
