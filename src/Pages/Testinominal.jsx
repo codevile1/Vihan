@@ -39,48 +39,50 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   return (
-    <section className="bg-black text-gray-300 py-16 h-screen p-10  flex items-center justify-center overflow-hidden ">
-      <div className="max-w-6xl mx-auto px-6 relative  ">
-        <h2 className="lg:text-3xl text-xl text-white text-center mb-12">
+    <section className="bg-black h-screen text-gray-300 py-16 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center overflow-hidden">
+      <h2 className="lg:text-3xl text-xl text-white text-center mb-4">
           What Clients Say
         </h2>
-        <div className="custom-prev cursor-pointer lg:text-4xl mt-10   text-white absolute left-0 lg:-left-20 top-1/2 -translate-y-1/2 z-10">
-  &#10094;
-</div>
-<div className="custom-next text-white  cursor-pointer   lg:text-4xl mt-10 absolute lg:-right-20 right-0 top-1/2 -translate-y-1/2 z-10">
-  &#10095;
-</div>
+      <div className="max-w-6xl mx-auto h-fit relative w-full flex items-center justify-center ">
+        
 
+        {/* Navigation Arrows */}
+        <div className="custom-prev cursor-pointer text-white text-3xl sm:text-4xl absolute left-2 sm:-left-10 top-1/2 -translate-y-1/2 z-10">
+          &#10094;
+        </div>
+        <div className="custom-next cursor-pointer text-white text-3xl sm:text-4xl absolute right-2 sm:-right-10 top-1/2 -translate-y-1/2 z-10">
+          &#10095;
+        </div>
 
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
-          spaceBetween={30}
+          spaceBetween={16} // smaller space on mobile
           slidesPerView={1}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           navigation={{
-    nextEl: ".custom-next",
-    prevEl: ".custom-prev",
-  }}
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
           pagination={{ clickable: true }}
           loop
           breakpoints={{
+            640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center  bg-white/5 backdrop-blur-md border border-white/10
-                              p-8 rounded-lg shadow-lg">
+              <div className="flex flex-col items-center bg-white/5 backdrop-blur-md border border-white/10 p-6 sm:p-8 rounded-lg shadow-lg">
                 <img
                   src={testimonial.img}
                   alt={testimonial.name}
-                  className="w-24 h-24 rounded-full mb-4 "
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-4"
                 />
                 <p className="text-sm italic text-center mb-4">
                   "{testimonial.text}"
                 </p>
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-white text-center">
                   {testimonial.name}
                 </h3>
                 <span className="text-gray-300 text-sm">{testimonial.role}</span>

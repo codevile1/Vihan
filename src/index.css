@@ -15,3 +15,17 @@ body {
 .hero{
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 4px;
+  column-gap: 4px;
+  padding: 0 20px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 4px;      /* vertical gap only */
+  column-gap: 0;     /* no horizontal gap */
+  padding: 0 20px;   /* left-right space */
+}

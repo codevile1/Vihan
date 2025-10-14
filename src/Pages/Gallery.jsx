@@ -1,67 +1,76 @@
 import React, { useState } from "react";
 
-const categories = ["All", "Portrait", "Wedding", "Cintrography", "Reels", "Events"];
+// Main categories
+const categories = ["All", "Brand", "Portraits", "Pre-Wedding", "Wedding"];
 
-// Subcategory mapping
-const subCategories = {
-  Wedding: ["Wedding", "Pre-Wedding"],
-  Events: ["Birthday", "Concert", "Festival"],
-  Reels: ["Shorts", "Highlights", "Behind The Scenes"], // Added subcategories for Reels
+// Import images using Vite glob
+const brandImages = Object.values(
+  import.meta.glob('../images/brand/*.{jpg,jpeg,png,webp}', { eager: true })
+).map(mod => mod.default);
+
+const portraitImages = Object.values(
+  import.meta.glob('../images/portraits/*.{jpg,jpeg,png,webp}', { eager: true })
+).map(mod => mod.default);
+
+const preWeddingImages = Object.values(
+  import.meta.glob('../images/prewedding/*.{jpg,jpeg,png,webp}', { eager: true })
+).map(mod => mod.default);
+
+const weddingImages = Object.values(
+  import.meta.glob('../images/wedding/*.{jpg,jpeg,png,webp}', { eager: true })
+).map(mod => mod.default);
+
+// Map images by category
+const galleryImages = {
+  Brand: brandImages,
+  Portraits: portraitImages,
+  "Pre-Wedding": preWeddingImages,
+  Wedding: weddingImages,
 };
 
-const generateImages = () => {
-  const images = [];
-  for (let i = 1010; i < 1060; i++) {
-    const cat = categories[i % categories.length];
-    images.push({
-      id: i,
-      src: `https://picsum.photos/id/${i}/800/1200`,
-      category: cat,
-    });
-  }
-  return images;
-};
-
-const images = generateImages();
+// Number of images to show per batch
+const IMAGES_PER_PAGE = 20;
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(IMAGES_PER_PAGE);
   const [modalImage, setModalImage] = useState(null);
 
-  // Filter logic
-  const filteredImages = (() => {
-    if (selectedCategory === "All") return images;
-    if (subCategories[selectedCategory] && selectedSubCategory) {
-      return images.filter(
-        (img) => img.category === selectedSubCategory
-      );
-    }
-    return images.filter((img) => img.category === selectedCategory);
-  })();
+  // Flatten all images with category info
+  const allImages = Object.entries(galleryImages).flatMap(([category, images]) =>
+    images.map((src, index) => ({
+      id: `${category}-${index}`,
+      src,
+      category,
+    }))
+  );
 
-  const openModal = (src) => setModalImage(src);
-  const closeModal = () => setModalImage(null);
+  // Filter images based on selected category
+  const filteredImages =
+    selectedCategory === "All"
+      ? allImages
+      : allImages.filter(img => img.category === selectedCategory);
+
+  // Images to display based on "Load More"
+  const visibleImages = filteredImages.slice(0, visibleCount);
 
   return (
-    <div className="min-h-screen w-full bg-black">
-      <h1 className="lg:text-4xl text-center text-white lg:pt-24 pt-20 lg:pb-4 pb-2">
-        Stories in Pixels
-      </h1>
+    <div className="min-h-screen w-full px-5 lg:px-40 py-10">
+      <h1 className="text-center text-4xl font-extralight mt-12 mb-4">Stories in Pixels</h1>
 
-      {/* Main Category Filters */}
-      <div className="flex flex-wrap justify-center gap-3 mb-4">
-        {categories.map((cat) => (
+      {/* Category Filters */}
+      <div className="flex flex-wrap justify-center gap-3 mb-6">
+        {categories.map(cat => (
           <button
             key={cat}
             onClick={() => {
               setSelectedCategory(cat);
-              setSelectedSubCategory(null);
+              setVisibleCount(IMAGES_PER_PAGE); // reset visible images
             }}
-            className={`lg:px-6 px-3 lg:py-2 py-1 rounded-full lg:text-smt text-xs  transition-all duration-150 ${
+            className={`px-4 py-1 text-sm font-medium rounded-full transition-all duration-150 cursor-pointer ${
               selectedCategory === cat
-                ? "bg-[#B9FD50] text-black shadow-lg"
-                : "bg-transparent text-gray-400 border border-gray-600 hover:bg-gray-800"
+                ? "bg-[#007BFF] text-white shadow-lg"
+                : "bg-gray-100 text-black hover:bg-gray-300"
             }`}
           >
             {cat}
@@ -69,52 +78,45 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* Subcategory Filters (if exist) */}
-      {subCategories[selectedCategory] && (
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
-          {subCategories[selectedCategory].map((subCat) => (
-            <button
-              key={subCat}
-              onClick={() => setSelectedSubCategory(subCat)}
-              className={`lg:px-4 px-2  lg:py-1 rounded-full lg:text-sm text-xs transition-all duration-150 ${
-                selectedSubCategory === subCat
-                  ? "bg-[#B9FD50] text-black shadow-lg"
-                  : "bg-transparent text-gray-400 border border-gray-600 hover:bg-gray-800"
-              }`}
-            >
-              {subCat}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* Masonry Gallery */}
-      <div className=" columns-2 lg:columns-3 gap-2 lg:p-4 p-2">
-        {filteredImages.map((img, index) => {
-          // const height = index % 3 === 1 ? 600 : 500;
-          return (
+      {/* Gallery Grid */}
+      {visibleImages.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {visibleImages.map(img => (
             <div
               key={img.id}
-  className="mb-2 overflow-hidden cursor-pointer group break-inside h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
-              // style={{ height: `${height}px` }}
-              onClick={() => openModal(img.src)}
+              className="w-full overflow-hidden cursor-pointer"
+              onClick={() => setModalImage(img.src)}
             >
               <img
                 src={img.src}
-                alt={`gallery-${index}`}
-                className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                alt={img.category}
+                className="w-full max-h-[600px] mx-auto object-contain"
                 loading="lazy"
               />
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-center text-gray-400 mt-10 text-lg">No content yet.</p>
+      )}
+
+      {/* Load More Button */}
+      {visibleCount < filteredImages.length && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => setVisibleCount(prev => prev + IMAGES_PER_PAGE)}
+            className="px-6 py-2 rounded-full bg-[#007BFF] text-white cursor-pointer hover:bg-blue-600 transition-all duration-300"
+          >
+            Load More
+          </button>
+        </div>
+      )}
 
       {/* Modal */}
       {modalImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
-          onClick={closeModal}
+          onClick={() => setModalImage(null)}
         >
           <img
             src={modalImage}
