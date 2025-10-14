@@ -15,7 +15,7 @@ function Navbar() {
   const navItems = ["Portfolio", "About", "Testimonial", "Contact"];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[99%] flex flex-col md:flex-row justify-between items-center px-8 py-3 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] z-50">
+    <nav className="fixed lg:top-4 top-2 left-1/2 -translate-x-1/2 w-[99%] flex flex-col md:flex-row justify-between items-center px-8 py-3 rounded-2xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] z-50">
 
       {/* Left: Logo + Hamburger */}
       <div className="flex items-center flex-1 justify-between w-full md:w-auto">
@@ -38,22 +38,36 @@ function Navbar() {
           {navItems.map((item) => {
             const route = item === "Portfolio" ? "/" : `/${item.toLowerCase()}`;
             return (
-              <NavLink
-                key={item}
-                to={route}
-                className={({ isActive }) =>
-                  `relative overflow-hidden text-black text-base font-medium transition-all duration-300 group ${
-                    isActive
-                      ? "text-[#B9FD50] after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-[#79519E] after:rounded-full"
-                      : "hover:text-[#007BFF]"
-                  }`
-                }
-              >
-                <span className="block transition-transform duration-300 group-hover:-translate-y-full">{item}</span>
-                <span className="absolute left-0 top-full block text-[#007BFF] transition-transform duration-300 group-hover:translate-y-[-100%]">
-                  {item}
-                </span>
-              </NavLink>
+            <NavLink
+  key={item}
+  to={route}
+  className={({ isActive }) =>
+    `relative overflow-hidden text-base font-medium transition-all duration-300 group ${
+      isActive ? "text-[#FF6B6B]  border-b-1 transition-all duration-150 ease-in-out" : "text-black"
+    }`
+  }
+>
+  {/* Top span: normal text */}
+  <span
+    className="block transition-transform duration-300 group-hover:-translate-y-full"
+  >
+    {item}
+  </span>
+
+  {/* Bottom span: sliding text on hover */}
+  <span
+    className="absolute left-0 top-full block text-[#007BFF] transition-transform duration-300 group-hover:translate-y-[-100%]"
+  >
+    {item}
+  </span>
+
+  {/* Active underline */}
+  <span
+    className="absolute left-0 -bottom-1 w-full h-[2px] bg-[#79519E] rounded-full"
+    style={{ display: window.location.pathname === route ? "block" : "none" }}
+  ></span>
+</NavLink>
+
             );
           })}
         </div>

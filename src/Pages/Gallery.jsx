@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 // Main categories
-const categories = ["All", "Brand", "Portraits", "Pre-Wedding", "Wedding"];
+const categories = ["All", "Brand", "Portraits", "Pre-Wedding", "Wedding", "Reels", "Events"];
 
 // Import images using Vite glob
 const brandImages = Object.values(
@@ -26,36 +26,61 @@ const galleryImages = {
   Portraits: portraitImages,
   "Pre-Wedding": preWeddingImages,
   Wedding: weddingImages,
+  Reels: [],   // empty for now
+  Events: [],  // empty for now
 };
 
 // Number of images to show per batch
 const IMAGES_PER_PAGE = 20;
 
+// Shuffle helper function
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(IMAGES_PER_PAGE);
   const [modalImage, setModalImage] = useState(null);
+  const [shuffledAll, setShuffledAll] = useState([]);
 
-  // Flatten all images with category info
-  const allImages = Object.entries(galleryImages).flatMap(([category, images]) =>
-    images.map((src, index) => ({
-      id: `${category}-${index}`,
-      src,
-      category,
-    }))
+  // Flatten all images with category info, memoized so it doesn't recreate every render
+  const allImages = useMemo(
+    () =>
+      Object.entries(galleryImages).flatMap(([category, images]) =>
+        images.map((src, index) => ({
+          id: `${category}-${index}`,
+          src,
+          category,
+        }))
+      ),
+    []
   );
+
+  // Shuffle images for "All" only once when component mounts or when selectedCategory changes to All
+  useEffect(() => {
+    if (selectedCategory === "All") {
+      setShuffledAll(shuffleArray(allImages));
+    }
+    setVisibleCount(IMAGES_PER_PAGE); // reset visible count on category change
+  }, [selectedCategory, allImages]);
 
   // Filter images based on selected category
   const filteredImages =
     selectedCategory === "All"
-      ? allImages
+      ? shuffledAll
       : allImages.filter(img => img.category === selectedCategory);
 
   // Images to display based on "Load More"
   const visibleImages = filteredImages.slice(0, visibleCount);
 
   return (
-    <div className="min-h-screen w-full px-5 lg:px-40 py-10">
+    <div className="min-h-screen w-full px-5 lg:px-30 py-10 overflow-hidden">
       <h1 className="text-center text-4xl font-extralight mt-12 mb-4">Stories in Pixels</h1>
 
       {/* Category Filters */}
@@ -63,10 +88,7 @@ export default function Gallery() {
         {categories.map(cat => (
           <button
             key={cat}
-            onClick={() => {
-              setSelectedCategory(cat);
-              setVisibleCount(IMAGES_PER_PAGE); // reset visible images
-            }}
+            onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-1 text-sm font-medium rounded-full transition-all duration-150 cursor-pointer ${
               selectedCategory === cat
                 ? "bg-[#007BFF] text-white shadow-lg"
@@ -80,17 +102,17 @@ export default function Gallery() {
 
       {/* Gallery Grid */}
       {visibleImages.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-4 gap-6 justify-items-center">
           {visibleImages.map(img => (
             <div
               key={img.id}
-              className="w-full overflow-hidden cursor-pointer"
+              className="h-full lg:w-[420px] bg-gray-300 overflow-hidden cursor-pointer"
               onClick={() => setModalImage(img.src)}
             >
               <img
                 src={img.src}
                 alt={img.category}
-                className="w-full max-h-[600px] mx-auto object-contain"
+                className="w-full h-full mx-auto object-cover object-center"
                 loading="lazy"
               />
             </div>

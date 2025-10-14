@@ -18,7 +18,7 @@ const Footer = () => {
         {/* Right side — portfolio link/logo */}
         <div className="mt-4 md:mt-0 flex items-center gap-2">
           <a
-            href="https://satyam.dev"
+            href="https://portfolio-v21.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-300 hover:text-[#79519E] transition-all duration-300"
